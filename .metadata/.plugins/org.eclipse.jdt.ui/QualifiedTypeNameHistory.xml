@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="service.BookService"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="service.BookServiceImplV1"/>
+<fullyQualifiedTypeName name="service.BusService"/>
+<fullyQualifiedTypeName name="service.StudentService"/>
+<fullyQualifiedTypeName name="service.StudentServiceImplV1"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

@@ -8,9 +8,10 @@ import domain.BookVO;
 
 public class BookServiceImplV1 implements BookService{
 
-	List<BookVO> bookList;
-	Scanner scan = new Scanner(System.in);
-	BookVO bookvo = new BookVO();
+	// 변수, 인스턴스는 private 이나 protected로 선언
+	private List<BookVO> bookList;
+	private Scanner scan = new Scanner(System.in);
+	private BookVO bookvo = new BookVO();
 	
 
 	public BookServiceImplV1() {
@@ -21,23 +22,30 @@ public class BookServiceImplV1 implements BookService{
 	@Override
 	public boolean inputBook() {
 		
-		
+		while(true) {
 		System.out.println("도서코드를 입력하세요!");
 		String code = scan.nextLine(); //문자열 입력하기위해 string
 		
-		try {
-			code=String.format("%05d", Integer.valueOf(code));
-			if(Integer.valueOf(code) >5) {
-				System.out.println("도서코드는 1~5자리만 유효합니다");
-				System.out.println("다시 입력하세요");
-				return false;
-			}
-			
-		} catch (Exception e) {
-			
-			
+		int intCode = code.length();
+		if(intCode <0 || intCode>5) {
+			System.out.println("도서코드 5자리이내");
+			continue;
 		}
+		
+		code =String.format("%05d", intCode);
 		bookvo.setCode(code);
+		break;
+		/*
+		 * try { code=String.format("%05d", code); //code는 스트링인데 왜 integer..
+		 * if(code.length() >5) { //자릿수 System.out.println("도서코드는 1~5자리만 유효합니다");
+		 * System.out.println("다시 입력하세요"); continue; }
+		 * 
+		 * } catch (Exception e) {
+		 * 
+		 * 
+		 * }
+		 */
+		}
 		//bookList.add(bookvo);
 		
 		while(1==1) {
@@ -47,11 +55,12 @@ public class BookServiceImplV1 implements BookService{
 		
 		//String strName="";
 		try {
-			if("".equals(name)){
+			//도서명 입력하지않았을때 .isempty를 써야 null값과 공백이 같이 검사된다
+			if(name.isEmpty()){
 				//return false;
 				System.out.println("도서명은 반드시 입력해야 합니다");
 				System.out.println("도서명을 다시 입력하세요!");
-				continue;
+				continue; //empty가 아니었을때  if벗어남
 			}
 			
 				
@@ -80,7 +89,8 @@ public class BookServiceImplV1 implements BookService{
 		
 		return true;
 		}
-	}
+		}
+	
 	
 	
 
@@ -96,6 +106,7 @@ public class BookServiceImplV1 implements BookService{
 		}
 		System.out.println("======================================");
 		
+		//scan.close();
 	}
 
 }
