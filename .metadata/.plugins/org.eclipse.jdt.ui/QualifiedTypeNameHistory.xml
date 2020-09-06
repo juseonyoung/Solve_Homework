@@ -5,6 +5,9 @@
 <fullyQualifiedTypeName name="service.BusService"/>
 <fullyQualifiedTypeName name="service.StudentService"/>
 <fullyQualifiedTypeName name="service.StudentServiceImplV1"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="com.biz.jack.service.DeckServiceV1"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.biz.jack.exec.PlayerServiceV1"/>
 </qualifiedTypeNameHistroy>
